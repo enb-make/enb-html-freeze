@@ -1,0 +1,47 @@
+{
+  "name": "enb-html-freeze",
+  "version": "0.1.0",
+  "description": "Techs for freezing resoureces from HTML",
+  "author": "unlok <unl0k@yandex.ru>",
+  "repository": "git://github.com/enb-make/enb-html-freeze",
+  "homepage": "https://github.com/enb-make/enb-html-freeze",
+  "bugs": "https://github.com/enb-make/enb-html-freeze/issues",
+  "main": "./lib/html-freeze.js",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/enb-make/enb-html-freeze/blob/master/LICENSE"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Alexander Tikvach",
+      "email": "unl0k@yandex.ru"
+    }
+  ],
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "hasha": "^2.0.1",
+    "lodash": "^3.10.1",
+    "mkdirp": "^0.5.1",
+    "vow": "^0.4.10",
+    "vow-node": "^0.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "chai-as-promised": "^5.1.0",
+    "istanbul": "0.3.14",
+    "jscs": "1.13.1",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "proxyquire": "^1.7.2",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec",
+    "lint": "jshint . && jscs -c .jscs.js .",
+    "cover": "istanbul cover _mocha",
+    "coveralls": "npm i coveralls && npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+  }
+}
