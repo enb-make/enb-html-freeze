@@ -43,5 +43,8 @@
     "lint": "jshint . && jscs -c .jscs.js .",
     "cover": "istanbul cover _mocha",
     "coveralls": "npm i coveralls && npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
   }
 }
