@@ -10,4 +10,4 @@ matrix:
       env: COVERALLS=1
 
 after_success:
-  - [ "x$COVERALLS" = "x1" ] && npm run coverals
+  - if [ "x$COVERALLS" = "x1" ]; then npm run coveralls; fi

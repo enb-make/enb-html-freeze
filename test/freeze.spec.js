@@ -82,7 +82,7 @@ describe('html-freeze', function() {
     it('should correctly perform resolving of a static path relative `nodePath`', function() {
         hash.returns(vow.resolve('0fc3'));
 
-        opts.nodePath = 'bundle/node'
+        opts.nodePath = 'bundle/node';
         opts.staticDir = 'static';
         opts.tag = 'img';
         opts.attr = 'src';
@@ -161,6 +161,98 @@ describe('html-freeze', function() {
         return freezeHtml(opts)
             .then(function(img) {
                 expect(img.attr('data-img')).to.equal('static/0fc3.png');
+            });
+    });
+
+    it('should freeze resource with query string', function() {
+        hash.returns(vow.resolve('0fc3'));
+
+        opts.staticDir = 'static';
+        opts.tag = 'param';
+        opts.attr = 'value';
+        opts.html = '<param value="res/flash.swf?width=100&height=200">';
+
+        return freezeHtml(opts)
+            .then(function(param) {
+                expect(param.attr('value')).to.equal('static/0fc3.swf?width=100&height=200');
+                expect(hash).to.have.been.calledWith(
+                    path.resolve('res/flash.swf')
+                );
+                expect(copy).to.have.been.calledWith(
+                    path.resolve('res/flash.swf'),
+                    path.resolve('static/0fc3.swf')
+                );
+            });
+    });
+
+    it('should freeze SVG with fragment identifiers', function() {
+        hash.returns(vow.resolve('0fc3'));
+
+        opts.staticDir = 'static';
+        opts.tag = 'img';
+        opts.attr = 'src';
+        opts.html = '<img src="imgs/image.svg#some_id">';
+
+        return freezeHtml(opts)
+            .then(function(img) {
+                expect(img.attr('src')).to.equal('static/0fc3.svg#some_id');
+                expect(hash).to.have.been.calledWith(
+                    path.resolve('imgs/image.svg')
+                );
+                expect(copy).to.have.been.calledWith(
+                    path.resolve('imgs/image.svg'),
+                    path.resolve('static/0fc3.svg')
+                );
+            });
+    });
+
+    describe('should filter URL', function() {
+        it('absolute', function() {
+            hash.returns(vow.resolve());
+
+            opts.html = '<img src="/imgs/image.png">';
+
+            return freezeHtml(opts)
+                .then(function() {
+                    expect(hash).to.have.been.not.called;
+                    expect(copy).to.have.been.not.called;
+                });
+        });
+        it('protocol', function() {
+            hash.returns(vow.resolve());
+
+            opts.html = '<img src="http://imgs.com/image.png">';
+
+            return freezeHtml(opts)
+                .then(function() {
+                    expect(hash).to.have.been.not.called;
+                    expect(copy).to.have.been.not.called;
+                });
+        });
+        it('relative protocol', function() {
+            hash.returns(vow.resolve());
+
+            opts.html = '<img src="//imgs.com/image.png">';
+
+            return freezeHtml(opts)
+                .then(function() {
+                    expect(hash).to.have.been.not.called;
+                    expect(copy).to.have.been.not.called;
+                });
+        });
+    });
+
+    it('shound not filter tag if an URL there is in query string', function() {
+        hash.returns(vow.resolve('0fc3'));
+
+        opts.staticDir = 'static';
+        opts.tag = 'param';
+        opts.attr = 'value';
+        opts.html = '<param value="res/flash.swf?width=100&height=200&q=http://somedomen.com">';
+
+        return freezeHtml(opts)
+            .then(function(param) {
+                expect(param.attr('value')).to.equal('static/0fc3.swf?width=100&height=200&q=http://somedomen.com');
             });
     });
 });

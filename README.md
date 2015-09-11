@@ -2,8 +2,8 @@ enb-html-freeze
 ==============
 
 [![NPM version](https://img.shields.io/npm/v/enb-html-freeze.svg?style=flat)](https://www.npmjs.org/package/enb-html-freeze)
-[![Build Status](https://img.shields.io/travis/enb-make/enb-html-freeze/master.svg?style=flat&label=tests)](https://travis-ci.org/enb-make/enb-html-freeze)
-[![Coverage Status](https://img.shields.io/coveralls/enb-make/enb-html-freeze.svg?style=flat)](https://coveralls.io/r/enb-make/enb-html-freeze?branch=master)
+[![Build Status](https://travis-ci.org/enb-make/enb-html-freeze.svg)](https://travis-ci.org/enb-make/enb-html-freeze)
+[![Coverage Status](https://coveralls.io/repos/enb-make/enb-html-freeze/badge.svg?branch=feature%2Fquery-str&service=github)](https://coveralls.io/github/enb-make/enb-html-freeze?branch=feature%2Fquery-str)
 [![Dependency Status](https://img.shields.io/david/enb-make/enb-html-freeze.svg?style=flat)](https://david-dm.org/enb-make/enb-html-freeze)
 
 Технологии для [фризинга](https://ru.bem.info/tools/optimizers/borschik/freeze/) статических ресурсов из **HTML**.
