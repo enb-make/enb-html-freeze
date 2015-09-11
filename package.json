@@ -6,7 +6,7 @@
   "repository": "git://github.com/enb-make/enb-html-freeze",
   "homepage": "https://github.com/enb-make/enb-html-freeze",
   "bugs": "https://github.com/enb-make/enb-html-freeze/issues",
-  "main": "./lib/html-freeze.js",
+  "main": "./techs/html-freeze.js",
   "licenses": [
     {
       "type": "MIT",
@@ -25,6 +25,7 @@
     "lodash": "^3.10.1",
     "mkdirp": "^0.5.1",
     "vow": "^0.4.10",
+    "vow-fs": "^0.3.4",
     "vow-node": "^0.3.0"
   },
   "devDependencies": {

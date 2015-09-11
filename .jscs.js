@@ -3,7 +3,7 @@ module.exports = {
         'node_modules',
         'coverage'
     ],
-    requireSpaceAfterKeywords: ['if', 'else', 'for', 'while', 'do', 'switch', 'return', 'try', 'catch'],
+    requireSpaceAfterKeywords: ['else', 'for', 'while', 'do', 'switch', 'return', 'try', 'catch'],
     requireSpaceBeforeBlockStatements: true,
     requireSpacesInConditionalExpression: true,
     disallowSpacesInNamedFunctionExpression: {
