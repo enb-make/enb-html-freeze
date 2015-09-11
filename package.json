@@ -1,6 +1,6 @@
 {
   "name": "enb-html-freeze",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Techs for freezing resoureces from HTML",
   "author": "unlok <unl0k@yandex.ru>",
   "repository": "git://github.com/enb-make/enb-html-freeze",
