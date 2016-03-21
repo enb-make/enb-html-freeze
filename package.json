@@ -3,14 +3,14 @@
   "version": "0.1.2",
   "description": "Techs for freezing resoureces from HTML",
   "author": "unlok <unl0k@yandex.ru>",
-  "repository": "git://github.com/enb-make/enb-html-freeze",
-  "homepage": "https://github.com/enb-make/enb-html-freeze",
-  "bugs": "https://github.com/enb-make/enb-html-freeze/issues",
+  "repository": "git://github.com/enb/enb-html-freeze",
+  "homepage": "https://github.com/enb/enb-html-freeze",
+  "bugs": "https://github.com/enb/enb-html-freeze/issues",
   "main": "./techs/html-freeze.js",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/enb-make/enb-html-freeze/blob/master/LICENSE"
+      "url": "https://github.com/enb/enb-html-freeze/blob/master/LICENSE"
     }
   ],
   "contributors": [
